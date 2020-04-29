@@ -1,24 +1,22 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { Tab } from "./tab.interface";
-import { TabsComponent } from '../tabs/tabs.component';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-tab',
   templateUrl: './tab.component.html',
   styleUrls: ['./tab.component.scss']
 })
-export class TabComponent implements OnInit, Tab {
-
-  public isActive:boolean = false;
+export class TabComponent implements OnInit {
 
   @Input() title: string;
+  @Output() onclick: EventEmitter<void> = new EventEmitter<void>();
 
-  constructor(
-    public tabs: TabsComponent
-  ) { }
+  public isActive: boolean = false;
 
-  ngOnInit(): void {
-    this.tabs.addTab(this)
+  constructor() { }
+
+  ngOnInit(): void { }
+
+  clickTabContent() {
+    this.onclick.emit();
   }
-
 }

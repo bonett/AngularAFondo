@@ -22,6 +22,7 @@ import { TimerComponent } from './timer/timer.component';
     TabsComponent,
     TimerComponent
   ],
+  entryComponents: [SimpleAlertViewComponent],
   imports: [
     BrowserModule,
     FormsModule,

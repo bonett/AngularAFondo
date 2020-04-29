@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-simple-alert-view',
@@ -7,9 +7,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SimpleAlertViewComponent implements OnInit {
 
+  @Input() message: string;
+  @Input() title: string;
+  @Output() onDismiss: EventEmitter<void> = new EventEmitter<void>();
+
+  public visible: boolean = false;
+
   constructor() { }
 
-  ngOnInit(): void {
+  ngOnInit(): void { }
+
+  public dismiss() {
+    this.visible = false;
+    this.onDismiss.emit();
   }
 
+  public show() {
+    this.visible = true;
+  }
 }
