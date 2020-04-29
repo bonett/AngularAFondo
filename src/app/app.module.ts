@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { ProgressBarComponent } from './progress-bar/progress-bar.component';
 import { AlertViewComponent } from './alert-view/alert-view.component';
@@ -23,7 +24,8 @@ import { TimerComponent } from './timer/timer.component';
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
