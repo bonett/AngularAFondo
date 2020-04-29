@@ -5,15 +5,14 @@
 
     <div class="card">
         <div class="header">
-            Add new timer
+            <ng-content select="[header]"></ng-content>
         </div>
 
         <div class="message">
             <ng-content></ng-content>
         </div>
         <div class="footer">
-            <button (click)="onCancel.emit()">Cancel</button>
-            <button (click)="onSubmit.emit()">Done</button>
+           <ng-content select="button"></ng-content>
         </div>
     </div>
 </div>
