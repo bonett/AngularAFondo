@@ -10,7 +10,6 @@ export class AppComponent {
   counterProgress: number = 0;
   totalCountdown: number = 15;
 
-
   constructor() { }
 
   updateProgress($event) {
@@ -18,6 +17,6 @@ export class AppComponent {
   }
 
   countdownFinished() {
-    console.log('countodw has finished');
+    console.log("countdown has finished");
   }
 }
