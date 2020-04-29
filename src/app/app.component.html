@@ -1,4 +1,13 @@
 <div>
   <h1>Timers</h1>
   <app-timer [init]="10" (onComplete)="logCountdownEnd()"></app-timer>
+  <app-timer [init]="50" (onComplete)="logCountdownEnd()"></app-timer>
+  <app-timer [init]="120" (onComplete)="logCountdownEnd()"></app-timer>
+
+  <button class="add" (click)="showAddTimer()">+</button>
+
+  <app-alert-view [hidden]="!isAddTimerVisible" (onCancel)="hiddenAddTimer()" (onSubmit)="hiddenAddTimer()">
+    <label for="time">Set the number of seconds for you timer </label>
+    <input type="number" [(ngModel)]="time">
+  </app-alert-view>
 </div>
