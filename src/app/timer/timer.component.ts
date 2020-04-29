@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy, Input, Output, EventEmitter, ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/core';
+import { Component, OnInit, OnDestroy, Input, Output, EventEmitter, ChangeDetectionStrategy, ChangeDetectorRef, ViewEncapsulation } from '@angular/core';
 import { TimerService } from './timer.service';
 import { Subscription } from 'rxjs';
 
@@ -7,7 +7,8 @@ import { Subscription } from 'rxjs';
   templateUrl: './timer.component.html',
   styleUrls: ['./timer.component.scss'],
   providers: [TimerService],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  encapsulation: ViewEncapsulation.Emulated
 })
 export class TimerComponent implements OnInit, OnDestroy {
 
